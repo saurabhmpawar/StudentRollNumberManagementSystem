@@ -26,15 +26,10 @@ namespace StudentRollNumberManagementSystem
 
         }
 
-        private void OpenFile(object sender, EventArgs e)
+        private void StudInfo(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
+            StudInfo ld1 = new StudInfo();
+            ld1.Show();
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,15 +60,7 @@ namespace StudentRollNumberManagementSystem
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
+       
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -102,5 +89,18 @@ namespace StudentRollNumberManagementSystem
                 childForm.Close();
             }
         }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudInfo ld1 = new StudInfo();
+            ld1.Show();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+       
     }
 }

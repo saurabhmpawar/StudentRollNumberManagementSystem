@@ -67,12 +67,6 @@
     <Compile Include="AddLoginDetails.Designer.cs">
       <DependentUpon>AddLoginDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddStudentInformation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddStudentInformation.Designer.cs">
-      <DependentUpon>AddStudentInformation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,11 +87,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentMgtDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentMgtDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentMgtDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudInfo.Designer.cs">
+      <DependentUpon>StudInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddLoginDetails.resx">
       <DependentUpon>AddLoginDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddStudentInformation.resx">
-      <DependentUpon>AddStudentInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -114,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudInfo.resx">
+      <DependentUpon>StudInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +138,17 @@
     </None>
     <None Include="StudentMgtDataSet.xss">
       <DependentUpon>StudentMgtDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentMgtDataSet1.xsc">
+      <DependentUpon>StudentMgtDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentMgtDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentMgtDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentMgtDataSet1.xss">
+      <DependentUpon>StudentMgtDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

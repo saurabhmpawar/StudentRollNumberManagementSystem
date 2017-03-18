@@ -23,10 +23,15 @@ namespace StudentRollNumberManagementSystem
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-          
-          
+
+
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

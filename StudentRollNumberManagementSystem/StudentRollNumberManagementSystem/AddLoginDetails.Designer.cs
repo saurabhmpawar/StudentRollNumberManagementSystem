@@ -34,20 +34,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentMgtDataSet = new StudentRollNumberManagementSystem.StudentMgtDataSet();
-            this.userLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userLoginTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSetTableAdapters.userLoginTableAdapter();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentMgtDataSet = new StudentRollNumberManagementSystem.StudentMgtDataSet();
+            this.userLoginTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSetTableAdapters.userLoginTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,15 +89,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(124, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "delete";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -144,40 +134,43 @@
             this.dataGridView1.Location = new System.Drawing.Point(335, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(409, 262);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // studentMgtDataSet
-            // 
-            this.studentMgtDataSet.DataSetName = "StudentMgtDataSet";
-            this.studentMgtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userLoginBindingSource
-            // 
-            this.userLoginBindingSource.DataMember = "userLogin";
-            this.userLoginBindingSource.DataSource = this.studentMgtDataSet;
-            // 
-            // userLoginTableAdapter
-            // 
-            this.userLoginTableAdapter.ClearBeforeFill = true;
             // 
             // userIdDataGridViewTextBoxColumn
             // 
             this.userIdDataGridViewTextBoxColumn.DataPropertyName = "userId";
             this.userIdDataGridViewTextBoxColumn.HeaderText = "userId";
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
             this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
             this.roleDataGridViewTextBoxColumn.HeaderText = "role";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userLoginBindingSource
+            // 
+            this.userLoginBindingSource.DataMember = "userLogin";
+            this.userLoginBindingSource.DataSource = this.studentMgtDataSet;
+            // 
+            // studentMgtDataSet
+            // 
+            this.studentMgtDataSet.DataSetName = "StudentMgtDataSet";
+            this.studentMgtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userLoginTableAdapter
+            // 
+            this.userLoginTableAdapter.ClearBeforeFill = true;
             // 
             // AddLoginDetails
             // 
@@ -188,7 +181,6 @@
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -198,15 +190,14 @@
             this.Text = "AddLoginDetails";
             this.Load += new System.EventHandler(this.AddLoginDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
