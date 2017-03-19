@@ -23,21 +23,42 @@ namespace StudentRollNumberManagementSystem
 
         private String getloginandRole(String userd,String password)
         {
-            if (userd == "admin" && password == "root")
+         //   MessageBox.Show(userd + password);
+            //select * from userLogin where userId= and password=
+            String roll = null;
+            try
             {
-                return "Admin";
-            }
-            else if (userd == "staff" && password == "staff")
-            {
-                return "staff";
-            }
-            else
-            {
+                SqlConnection con = DatabaseConnection.getDatabaseConnection();
 
-                throw new Exception("invalid username or password");
+                con = DatabaseConnection.getDatabaseConnection();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select *  from userLogin where userId=@userId and  password=@password", con);
+
+                cmd.Parameters.AddWithValue("@userId", userd);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                Boolean flagfound = false;
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        roll = reader["role"].ToString();
+                        flagfound = true;
+                    }
+                }
+
+                con.Close();
+
+                if(!flagfound)
+                {
+                    throw new Exception("Wrong password");
+                }
             }
-            
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eror Occured while fetching student resoard\n\n\n" + ex.GetBaseException());
+            }
+            return roll; 
         }
         private void btn_login_Click(object sender, EventArgs e)
         {
@@ -48,14 +69,14 @@ namespace StudentRollNumberManagementSystem
                 {
 
                     String role = getloginandRole(text_username.Text,textPassword.Text);
-
+                  //  MessageBox.Show("role"+role);
                     if (role == "Admin")
                     {
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();
                         this.Hide();
                     }
-                    else if(role=="staff")
+                    else if(role=="Staff")
                     {
                         staffDashboard mystaffDashboard = new staffDashboard();
 

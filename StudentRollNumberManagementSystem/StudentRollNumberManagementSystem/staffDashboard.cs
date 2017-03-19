@@ -105,5 +105,30 @@ namespace StudentRollNumberManagementSystem
             AddMarksInfo addmarkinfo = new AddMarksInfo();
             addmarkinfo.Show();
         }
+
+        private void marksReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            MArkListRepoertViewer s = new MArkListRepoertViewer();
+            s.Show();
+        }
+
+        private void studentReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentReport stud = new StudentReport();
+            stud.Show();
+
+        }
+
+        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subjectReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SubjectListReport slr = new SubjectListReport();
+            slr.Show();
+        }
     }
 }

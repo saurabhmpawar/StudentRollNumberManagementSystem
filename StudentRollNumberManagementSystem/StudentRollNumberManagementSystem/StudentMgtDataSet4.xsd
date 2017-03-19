@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StudentMgtDataSet4" targetNamespace="http://tempuri.org/StudentMgtDataSet4.xsd" xmlns:mstns="http://tempuri.org/StudentMgtDataSet4.xsd" xmlns="http://tempuri.org/StudentMgtDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="StudentMgtConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="StudentMgtConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentRollNumberManagementSystem.Properties.Settings.GlobalReference.Default.StudentMgtConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewMarksTableAdapter" GeneratorDataComponentClassName="ViewMarksTableAdapter" Name="ViewMarks" UserDataComponentName="ViewMarksTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StudentMgtConnectionString (Settings)" DbObjectName="dbo.ViewMarks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT roll_number, exam_seat_no, prn_number, name, subjet_name, marks FROM dbo.ViewMarks</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="roll_number" DataSetColumn="roll_number" />
+              <Mapping SourceColumn="exam_seat_no" DataSetColumn="exam_seat_no" />
+              <Mapping SourceColumn="prn_number" DataSetColumn="prn_number" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="subjet_name" DataSetColumn="subjet_name" />
+              <Mapping SourceColumn="marks" DataSetColumn="marks" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StudentMgtDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="StudentMgtDataSet4" msprop:Generator_UserDSName="StudentMgtDataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewMarks" msprop:Generator_TableClassName="ViewMarksDataTable" msprop:Generator_TableVarName="tableViewMarks" msprop:Generator_TablePropName="ViewMarks" msprop:Generator_RowDeletingName="ViewMarksRowDeleting" msprop:Generator_RowChangingName="ViewMarksRowChanging" msprop:Generator_RowEvHandlerName="ViewMarksRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewMarksRowDeleted" msprop:Generator_UserTableName="ViewMarks" msprop:Generator_RowChangedName="ViewMarksRowChanged" msprop:Generator_RowEvArgName="ViewMarksRowChangeEvent" msprop:Generator_RowClassName="ViewMarksRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="roll_number" msprop:Generator_ColumnVarNameInTable="columnroll_number" msprop:Generator_ColumnPropNameInRow="roll_number" msprop:Generator_ColumnPropNameInTable="roll_numberColumn" msprop:Generator_UserColumnName="roll_number" type="xs:int" />
+              <xs:element name="exam_seat_no" msprop:Generator_ColumnVarNameInTable="columnexam_seat_no" msprop:Generator_ColumnPropNameInRow="exam_seat_no" msprop:Generator_ColumnPropNameInTable="exam_seat_noColumn" msprop:Generator_UserColumnName="exam_seat_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prn_number" msprop:Generator_ColumnVarNameInTable="columnprn_number" msprop:Generator_ColumnPropNameInRow="prn_number" msprop:Generator_ColumnPropNameInTable="prn_numberColumn" msprop:Generator_UserColumnName="prn_number">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subjet_name" msprop:Generator_ColumnVarNameInTable="columnsubjet_name" msprop:Generator_ColumnPropNameInRow="subjet_name" msprop:Generator_ColumnPropNameInTable="subjet_nameColumn" msprop:Generator_UserColumnName="subjet_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="marks" msprop:Generator_ColumnVarNameInTable="columnmarks" msprop:Generator_ColumnPropNameInRow="marks" msprop:Generator_ColumnPropNameInTable="marksColumn" msprop:Generator_UserColumnName="marks">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ViewMarks" />
+      <xs:field xpath="mstns:roll_number" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

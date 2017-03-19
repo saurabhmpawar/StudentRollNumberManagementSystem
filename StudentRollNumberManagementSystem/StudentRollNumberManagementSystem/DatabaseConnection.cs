@@ -15,7 +15,8 @@ namespace StudentRollNumberManagementSystem
         {   
        SqlConnection con;
        con = new SqlConnection();
-       con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\StudentRollNumberManagementSystem\StudentRollNumberManagementSystem\StudentRollNumberManagementSystem\StudentMgt.mdf; Integrated Security = True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\StudentMgt.mdf;Integrated Security=True";
+                //@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\StudentRollNumberManagementSystem\StudentRollNumberManagementSystem\StudentRollNumberManagementSystem\StudentMgt.mdf; Integrated Security = True";
        return con;
         }
     }
