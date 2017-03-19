@@ -70,11 +70,11 @@
     <Compile Include="AddLoginDetails.Designer.cs">
       <DependentUpon>AddLoginDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddMarks.cs">
+    <Compile Include="AddMarksInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMarks.Designer.cs">
-      <DependentUpon>AddMarks.cs</DependentUpon>
+    <Compile Include="AddMarksInfo.Designer.cs">
+      <DependentUpon>AddMarksInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -83,6 +83,12 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="FillMarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FillMarks.Designer.cs">
+      <DependentUpon>FillMarks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentMgtDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentMgtDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentMgtDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StudentReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,11 +133,14 @@
     <EmbeddedResource Include="AddLoginDetails.resx">
       <DependentUpon>AddLoginDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddMarks.resx">
-      <DependentUpon>AddMarks.cs</DependentUpon>
+    <EmbeddedResource Include="AddMarksInfo.resx">
+      <DependentUpon>AddMarksInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FillMarks.resx">
+      <DependentUpon>FillMarks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -180,6 +194,17 @@
     </None>
     <None Include="StudentMgtDataSet1.xss">
       <DependentUpon>StudentMgtDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentMgtDataSet2.xsc">
+      <DependentUpon>StudentMgtDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentMgtDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentMgtDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentMgtDataSet2.xss">
+      <DependentUpon>StudentMgtDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

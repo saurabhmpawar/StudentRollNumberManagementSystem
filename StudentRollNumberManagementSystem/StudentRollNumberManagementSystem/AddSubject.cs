@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudentRollNumberManagementSystem
 {
-    public partial class AddMarks : Form
+    public partial class AddSubject : Form
     {
-        public AddMarks()
+        public AddSubject()
         {
             InitializeComponent();
         }

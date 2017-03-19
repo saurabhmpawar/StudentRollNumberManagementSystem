@@ -16,5 +16,12 @@ namespace StudentRollNumberManagementSystem
         {
             InitializeComponent();
         }
+
+        private void BtnNext_Click(object sender, EventArgs e)
+        {
+            FillMarks marks = new FillMarks();
+            marks.Show();
+            this.Hide();
+        }
     }
 }

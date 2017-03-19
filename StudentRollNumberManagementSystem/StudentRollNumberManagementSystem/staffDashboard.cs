@@ -100,6 +100,10 @@ namespace StudentRollNumberManagementSystem
 
         }
 
-       
+        private void fillMarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMarksInfo addmarkinfo = new AddMarksInfo();
+            addmarkinfo.Show();
+        }
     }
 }

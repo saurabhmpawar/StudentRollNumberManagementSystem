@@ -209,6 +209,7 @@
             this.fillMarksToolStripMenuItem.Name = "fillMarksToolStripMenuItem";
             this.fillMarksToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fillMarksToolStripMenuItem.Text = "Fill Marks";
+            this.fillMarksToolStripMenuItem.Click += new System.EventHandler(this.fillMarksToolStripMenuItem_Click);
             // 
             // marksReportToolStripMenuItem
             // 
