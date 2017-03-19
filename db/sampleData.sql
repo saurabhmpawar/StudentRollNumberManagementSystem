@@ -9,3 +9,16 @@ INSERT INTO [dbo].[userLogin] ([userId], [password], [createdOn], [updatedOn], [
 					 
 					 INSERT INTO [dbo].[marks_details] ([roll_number], [subject_id], [marks], [createdOn], [updatedOn], [createdBy], [updatedBy]) 
                            VALUES (330, 1, 49, NULL, NULL, NULL, NULL)
+
+						   
+	"INSERT INTO userLogin (userId, password, role) VALUES (@Name, @password, @role)"
+	
+	
+	select stu.roll_number ,stu.exam_seat_no,stu.prn_number,stu.name ,sub.subjet_name, m.marks from 
+	marks_details m ,studentInfo stu ,subjects sub where m.roll_number = stu.roll_number and sub.subject_id =m.subject_id
+	
+	
+	-- create view query
+	CREATE VIEW [dbo].[ViewMarks]
+	AS SELECT  stu.roll_number ,stu.exam_seat_no,stu.prn_number,stu.name ,sub.subjet_name, m.marks from 
+	marks_details m ,studentInfo stu ,subjects sub where m.roll_number = stu.roll_number and sub.subject_id =m.subject_id ;

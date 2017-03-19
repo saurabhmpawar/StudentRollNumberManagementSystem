@@ -15,6 +15,9 @@ namespace StudentRollNumberManagementSystem
     public partial class FillMarks : Form
     {
 
+        int subjectInput = 0;
+        int rollnoInput = 0;
+
         AddMarksInfo ownerForm = null;
         public FillMarks(AddMarksInfo ownerForm )
         {
@@ -23,6 +26,7 @@ namespace StudentRollNumberManagementSystem
             this.label_subject.Text=ownerForm.selectedValue;
             this.lblSubjectid.Text = ""+ownerForm.selectedSubjectid;
             fillSubjectCombo();
+            DisplayData();
         }
 
 
@@ -33,7 +37,8 @@ namespace StudentRollNumberManagementSystem
                 SqlConnection con = DatabaseConnection.getDatabaseConnection();
 
 
-                string query = "select roll_number from studentInfo";
+                string query = "select roll_number from studentInfo where roll_number NOT IN (select roll_number from marks_details where subject_id=" + lblSubjectid.Text+")";
+
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 con.Open();
                 DataSet ds = new DataSet();
@@ -65,7 +70,8 @@ namespace StudentRollNumberManagementSystem
 
             con.Open();
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from marks_details", con);
+            adapt = new SqlDataAdapter("select * from marks_details where subject_id="+lblSubjectid.Text, con);
+            
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
@@ -82,7 +88,8 @@ namespace StudentRollNumberManagementSystem
         {
             comboBox1.Text = "";
             text_marks.Clear();
-            
+            lbl_examSeatNo.Text = "";
+            lbl_name.Text = "";
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -114,6 +121,7 @@ namespace StudentRollNumberManagementSystem
                     cmd.ExecuteNonQuery();
                     con.Close();
                     DisplayData();
+                    fillSubjectCombo();
                     clearAll();
                 }
                 else
@@ -126,6 +134,75 @@ namespace StudentRollNumberManagementSystem
             {
                 MessageBox.Show("opps error occured \n\n" + ws.GetBaseException());
 
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //select * from studentinfo where rollno = combobox1.txt
+
+            try
+            {
+                SqlConnection con = DatabaseConnection.getDatabaseConnection();
+
+                con = DatabaseConnection.getDatabaseConnection();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select *  from studentInfo where roll_number=@rollNo",con);
+
+                cmd.Parameters.AddWithValue("@rollNo", comboBox1.Text);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        lbl_name.Text= reader["name"].ToString();
+                        lbl_examSeatNo.Text= reader["exam_seat_no"].ToString();
+                        }
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eror Occured while fetching student resoard\n\n\n"+ex.GetBaseException());
+            }
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+
+            rollnoInput = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            subjectInput = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+            lblSubjectid.Text =""+ subjectInput;
+            comboBox1.Text = ""+rollnoInput;
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (rollnoInput != 0 && subjectInput!=0)
+            {
+                SqlCommand cmd;
+                SqlConnection con = DatabaseConnection.getDatabaseConnection();
+
+                con = DatabaseConnection.getDatabaseConnection();
+
+                cmd = new SqlCommand("delete marks_details where roll_number=@roll_number and subject_id=@subject_id", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@roll_number", rollnoInput);
+                cmd.Parameters.AddWithValue("@subject_id", subjectInput);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record Deleted Successfully!");
+                DisplayData();
+                fillSubjectCombo();
+                clearAll();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Delete");
             }
         }
     }

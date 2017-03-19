@@ -136,9 +136,7 @@ namespace StudentRollNumberManagementSystem
         {
             try
             {
-                // TODO: This line of code loads data into the 'studentMgtDataSet.userLogin' table. You can move, or remove it, as needed.
-                //this.userLoginTableAdapter.Fill(this.studentMgtDataSet.userLogin);
-
+            
                 if (txt_subjectName.Text != "" && txt_failMArk.Text != "" && txt_termworkMark.Text != "")
                 {
                     SqlCommand cmd;

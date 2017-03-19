@@ -29,45 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.but_insert = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_rollno = new System.Windows.Forms.TextBox();
+            this.txt_seatno = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
+            this.txt_prn = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentMgtDataSet = new StudentRollNumberManagementSystem.StudentMgtDataSet();
-            this.studentMgtDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userLoginTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSetTableAdapters.userLoginTableAdapter();
-            this.studentMgtDataSet1 = new StudentRollNumberManagementSystem.StudentMgtDataSet1();
-            this.studentInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentInfoTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSet1TableAdapters.studentInfoTableAdapter();
             this.rollnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.examseatnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prnnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentMgtDataSet1 = new StudentRollNumberManagementSystem.StudentMgtDataSet1();
+            this.studentMgtDataSet = new StudentRollNumberManagementSystem.StudentMgtDataSet();
+            this.studentMgtDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userLoginTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSetTableAdapters.userLoginTableAdapter();
+            this.studentInfoTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSet1TableAdapters.studentInfoTableAdapter();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // but_insert
-            // 
-            this.but_insert.Location = new System.Drawing.Point(165, 183);
-            this.but_insert.Name = "but_insert";
-            this.but_insert.Size = new System.Drawing.Size(75, 23);
-            this.but_insert.TabIndex = 1;
-            this.but_insert.Text = "delete";
-            this.but_insert.UseVisualStyleBackColor = true;
-            this.but_insert.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -105,37 +96,37 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Roll No. :";
             // 
-            // textBox1
+            // txt_rollno
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txt_rollno.Location = new System.Drawing.Point(99, 26);
+            this.txt_rollno.Name = "txt_rollno";
+            this.txt_rollno.Size = new System.Drawing.Size(100, 20);
+            this.txt_rollno.TabIndex = 5;
             // 
-            // textBox2
+            // txt_seatno
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.txt_seatno.Location = new System.Drawing.Point(99, 57);
+            this.txt_seatno.Name = "txt_seatno";
+            this.txt_seatno.Size = new System.Drawing.Size(100, 20);
+            this.txt_seatno.TabIndex = 6;
             // 
-            // textBox3
+            // txt_name
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.txt_name.Location = new System.Drawing.Point(99, 93);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(100, 20);
+            this.txt_name.TabIndex = 7;
             // 
-            // textBox4
+            // txt_prn
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
+            this.txt_prn.Location = new System.Drawing.Point(99, 128);
+            this.txt_prn.Name = "txt_prn";
+            this.txt_prn.Size = new System.Drawing.Size(100, 20);
+            this.txt_prn.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(50, 183);
+            this.button1.Location = new System.Drawing.Point(12, 183);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -158,39 +149,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(502, 230);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // studentMgtDataSet
-            // 
-            this.studentMgtDataSet.DataSetName = "StudentMgtDataSet";
-            this.studentMgtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentMgtDataSetBindingSource
-            // 
-            this.studentMgtDataSetBindingSource.DataSource = this.studentMgtDataSet;
-            this.studentMgtDataSetBindingSource.Position = 0;
-            // 
-            // userLoginBindingSource
-            // 
-            this.userLoginBindingSource.DataMember = "userLogin";
-            this.userLoginBindingSource.DataSource = this.studentMgtDataSetBindingSource;
-            // 
-            // userLoginTableAdapter
-            // 
-            this.userLoginTableAdapter.ClearBeforeFill = true;
-            // 
-            // studentMgtDataSet1
-            // 
-            this.studentMgtDataSet1.DataSetName = "StudentMgtDataSet1";
-            this.studentMgtDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentInfoBindingSource
-            // 
-            this.studentInfoBindingSource.DataMember = "studentInfo";
-            this.studentInfoBindingSource.DataSource = this.studentMgtDataSet1;
-            // 
-            // studentInfoTableAdapter
-            // 
-            this.studentInfoTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // rollnumberDataGridViewTextBoxColumn
             // 
@@ -216,46 +175,99 @@
             this.prnnumberDataGridViewTextBoxColumn.HeaderText = "prn_number";
             this.prnnumberDataGridViewTextBoxColumn.Name = "prnnumberDataGridViewTextBoxColumn";
             // 
+            // studentInfoBindingSource
+            // 
+            this.studentInfoBindingSource.DataMember = "studentInfo";
+            this.studentInfoBindingSource.DataSource = this.studentMgtDataSet1;
+            // 
+            // studentMgtDataSet1
+            // 
+            this.studentMgtDataSet1.DataSetName = "StudentMgtDataSet1";
+            this.studentMgtDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentMgtDataSet
+            // 
+            this.studentMgtDataSet.DataSetName = "StudentMgtDataSet";
+            this.studentMgtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentMgtDataSetBindingSource
+            // 
+            this.studentMgtDataSetBindingSource.DataSource = this.studentMgtDataSet;
+            this.studentMgtDataSetBindingSource.Position = 0;
+            // 
+            // userLoginBindingSource
+            // 
+            this.userLoginBindingSource.DataMember = "userLogin";
+            this.userLoginBindingSource.DataSource = this.studentMgtDataSetBindingSource;
+            // 
+            // userLoginTableAdapter
+            // 
+            this.userLoginTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentInfoTableAdapter
+            // 
+            this.studentInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(93, 183);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 11;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(174, 183);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete.TabIndex = 12;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // StudInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 262);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_prn);
+            this.Controls.Add(this.txt_name);
+            this.Controls.Add(this.txt_seatno);
+            this.Controls.Add(this.txt_rollno);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.but_insert);
             this.Name = "StudInfo";
             this.Text = "StudInfo";
             this.Load += new System.EventHandler(this.StudInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button but_insert;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_rollno;
+        private System.Windows.Forms.TextBox txt_seatno;
+        private System.Windows.Forms.TextBox txt_name;
+        private System.Windows.Forms.TextBox txt_prn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource studentMgtDataSetBindingSource;
@@ -269,5 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn examseatnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prnnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

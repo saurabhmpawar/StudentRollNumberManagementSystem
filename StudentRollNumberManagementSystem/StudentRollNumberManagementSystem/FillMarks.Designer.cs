@@ -37,12 +37,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_examSeatNo = new System.Windows.Forms.Label();
             this.text_marks = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.btn_pre = new System.Windows.Forms.Button();
-            this.btn_next = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rollnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,6 +126,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lbl_name
             // 
@@ -138,14 +137,14 @@
             this.lbl_name.Size = new System.Drawing.Size(0, 20);
             this.lbl_name.TabIndex = 7;
             // 
-            // label6
+            // lbl_examSeatNo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(204, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 20);
-            this.label6.TabIndex = 8;
+            this.lbl_examSeatNo.AutoSize = true;
+            this.lbl_examSeatNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_examSeatNo.Location = new System.Drawing.Point(204, 152);
+            this.lbl_examSeatNo.Name = "lbl_examSeatNo";
+            this.lbl_examSeatNo.Size = new System.Drawing.Size(0, 20);
+            this.lbl_examSeatNo.TabIndex = 8;
             // 
             // text_marks
             // 
@@ -168,7 +167,7 @@
             // btn_Save
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(93, 247);
+            this.btn_Save.Location = new System.Drawing.Point(188, 247);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 37);
             this.btn_Save.TabIndex = 11;
@@ -176,35 +175,16 @@
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // btn_pre
-            // 
-            this.btn_pre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pre.Location = new System.Drawing.Point(258, 247);
-            this.btn_pre.Name = "btn_pre";
-            this.btn_pre.Size = new System.Drawing.Size(50, 37);
-            this.btn_pre.TabIndex = 12;
-            this.btn_pre.Text = "<";
-            this.btn_pre.UseVisualStyleBackColor = true;
-            // 
-            // btn_next
-            // 
-            this.btn_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_next.Location = new System.Drawing.Point(325, 247);
-            this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(48, 37);
-            this.btn_next.TabIndex = 13;
-            this.btn_next.Text = ">";
-            this.btn_next.UseVisualStyleBackColor = true;
-            // 
             // Btn_Delete
             // 
             this.Btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Delete.Location = new System.Drawing.Point(174, 247);
+            this.Btn_Delete.Location = new System.Drawing.Point(269, 247);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(75, 37);
             this.Btn_Delete.TabIndex = 14;
             this.Btn_Delete.Text = "Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // dataGridView1
             // 
@@ -221,11 +201,12 @@
             this.createdByDataGridViewTextBoxColumn,
             this.updatedByDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.marksdetailsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(427, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(572, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(335, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(623, 259);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // rollnumberDataGridViewTextBoxColumn
             // 
@@ -313,17 +294,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 296);
+            this.ClientSize = new System.Drawing.Size(1207, 296);
             this.Controls.Add(this.lblSubjectid);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Btn_Delete);
-            this.Controls.Add(this.btn_next);
-            this.Controls.Add(this.btn_pre);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.text_marks);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_examSeatNo);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
@@ -353,12 +332,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_examSeatNo;
         private System.Windows.Forms.TextBox text_marks;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_Save;
-        private System.Windows.Forms.Button btn_pre;
-        private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.DataGridView dataGridView1;
         private StudentMgtDataSet2 studentMgtDataSet2;
