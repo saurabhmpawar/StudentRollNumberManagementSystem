@@ -10,26 +10,32 @@ using System.Windows.Forms;
 
 namespace StudentRollNumberManagementSystem
 {
-    public partial class Dashboard : Form
+    public partial class staffDashboard : Form
     {
         private int childFormNumber = 0;
 
-        public Dashboard()
+        public staffDashboard()
         {
             InitializeComponent();
         }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            AddLoginDetails ld = new AddLoginDetails();
-            ld.Show();
-
+            Form childForm = new Form();
+            childForm.MdiParent = this;
+            childForm.Text = "Window " + childFormNumber++;
+            childForm.Show();
         }
 
-        private void StudInfo(object sender, EventArgs e)
+        private void OpenFile(object sender, EventArgs e)
         {
-            StudInfo ld1 = new StudInfo();
-            ld1.Show();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string FileName = openFileDialog.FileName;
+            }
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,8 +65,7 @@ namespace StudentRollNumberManagementSystem
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-
-       
+        
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -90,34 +95,11 @@ namespace StudentRollNumberManagementSystem
             }
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void staffDashboard_Load(object sender, EventArgs e)
         {
-            StudInfo ld1 = new StudInfo();
-            ld1.Show();
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void studentInfoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StudInfo stu = new StudInfo();
-            stu.Show();
 
         }
 
-        private void studentReportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StudentReport rpt = new StudentReport();
-            rpt.Show();
-        }
-
-        private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddLoginDetails adl = new AddLoginDetails();
-            adl.Show();
-        }
+       
     }
 }

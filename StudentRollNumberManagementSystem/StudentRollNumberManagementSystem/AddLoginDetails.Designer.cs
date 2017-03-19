@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.text_username = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.butn_delete = new System.Windows.Forms.Button();
+            this.comboBox1_role = new System.Windows.Forms.ComboBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +44,7 @@
             this.userLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentMgtDataSet = new StudentRollNumberManagementSystem.StudentMgtDataSet();
             this.userLoginTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSetTableAdapters.userLoginTableAdapter();
+            this.btn_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userLoginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet)).BeginInit();
@@ -76,39 +77,40 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Role";
             // 
-            // textBox1
+            // text_username
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 3;
+            this.text_username.Location = new System.Drawing.Point(124, 28);
+            this.text_username.Name = "text_username";
+            this.text_username.Size = new System.Drawing.Size(121, 20);
+            this.text_username.TabIndex = 3;
             // 
-            // textBox2
+            // txt_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_Password.Location = new System.Drawing.Point(124, 78);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(121, 20);
+            this.txt_Password.TabIndex = 4;
             // 
-            // button4
+            // butn_delete
             // 
-            this.button4.Location = new System.Drawing.Point(217, 176);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "display";
-            this.button4.UseVisualStyleBackColor = true;
+            this.butn_delete.Location = new System.Drawing.Point(217, 176);
+            this.butn_delete.Name = "butn_delete";
+            this.butn_delete.Size = new System.Drawing.Size(75, 23);
+            this.butn_delete.TabIndex = 9;
+            this.butn_delete.Text = "Delete";
+            this.butn_delete.UseVisualStyleBackColor = true;
+            this.butn_delete.Click += new System.EventHandler(this.butn_delete_Click);
             // 
-            // comboBox1
+            // comboBox1_role
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox1_role.FormattingEnabled = true;
+            this.comboBox1_role.Items.AddRange(new object[] {
             "Admin",
             "Staff"});
-            this.comboBox1.Location = new System.Drawing.Point(124, 122);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
+            this.comboBox1_role.Location = new System.Drawing.Point(124, 122);
+            this.comboBox1_role.Name = "comboBox1_role";
+            this.comboBox1_role.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1_role.TabIndex = 10;
             // 
             // btn_save
             // 
@@ -136,6 +138,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(409, 262);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick_1);
             // 
             // userIdDataGridViewTextBoxColumn
             // 
@@ -172,17 +175,28 @@
             // 
             this.userLoginTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(124, 176);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 13;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // AddLoginDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 287);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1_role);
+            this.Controls.Add(this.butn_delete);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.text_username);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -198,13 +212,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button butn_delete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox text_username;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.ComboBox comboBox1_role;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.DataGridView dataGridView1;
         private StudentMgtDataSet studentMgtDataSet;
@@ -213,5 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_update;
     }
 }

@@ -31,7 +31,21 @@ namespace StudentRollNumberManagementSystem
         {
 
         }
+        private void DisplayData()
+        {
+            SqlConnection con = DatabaseConnection.getDatabaseConnection();
+           
+            SqlDataAdapter adapt;
 
+            con = DatabaseConnection.getDatabaseConnection();
+
+            con.Open();
+            DataTable dt = new DataTable();
+            adapt = new SqlDataAdapter("select * from studentInfo", con);
+            adapt.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'studentMgtDataSet.userLogin' table. You can move, or remove it, as needed.
@@ -52,9 +66,8 @@ namespace StudentRollNumberManagementSystem
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Inserted succesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGridView1.Update();
-                dataGridView1.Refresh();
-            }
+                DisplayData();
+                    }
             catch (Exception da)
             {
                 MessageBox.Show("opps something went wrong!!!"+da.GetBaseException());
