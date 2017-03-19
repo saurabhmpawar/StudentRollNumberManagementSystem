@@ -28,28 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.txt_subjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_termworkMark = new System.Windows.Forms.TextBox();
+            this.txt_failMArk = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.subjectidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjetnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.semDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.twmarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minmarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentMgtDataSet3 = new StudentRollNumberManagementSystem.StudentMgtDataSet3();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.subjectsTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSet3TableAdapters.subjectsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_subjectName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(229, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 26);
-            this.textBox1.TabIndex = 0;
+            this.txt_subjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_subjectName.Location = new System.Drawing.Point(229, 45);
+            this.txt_subjectName.Name = "txt_subjectName";
+            this.txt_subjectName.Size = new System.Drawing.Size(255, 26);
+            this.txt_subjectName.TabIndex = 0;
             // 
             // label1
             // 
@@ -91,21 +102,21 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "TermWork Marks :";
             // 
-            // textBox3
+            // txt_termworkMark
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(229, 134);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(255, 26);
-            this.textBox3.TabIndex = 6;
+            this.txt_termworkMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_termworkMark.Location = new System.Drawing.Point(229, 134);
+            this.txt_termworkMark.Name = "txt_termworkMark";
+            this.txt_termworkMark.Size = new System.Drawing.Size(255, 26);
+            this.txt_termworkMark.TabIndex = 6;
             // 
-            // textBox4
+            // txt_failMArk
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(229, 178);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(255, 26);
-            this.textBox4.TabIndex = 7;
+            this.txt_failMArk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_failMArk.Location = new System.Drawing.Point(229, 178);
+            this.txt_failMArk.Name = "txt_failMArk";
+            this.txt_failMArk.Size = new System.Drawing.Size(255, 26);
+            this.txt_failMArk.TabIndex = 7;
             // 
             // btn_save
             // 
@@ -116,6 +127,7 @@
             this.btn_save.TabIndex = 8;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_Update
             // 
@@ -126,6 +138,7 @@
             this.btn_Update.TabIndex = 9;
             this.btn_Update.Text = "Update";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_delete
             // 
@@ -136,14 +149,72 @@
             this.btn_delete.TabIndex = 10;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.subjectidDataGridViewTextBoxColumn,
+            this.subjetnameDataGridViewTextBoxColumn,
+            this.semDataGridViewTextBoxColumn,
+            this.twmarkDataGridViewTextBoxColumn,
+            this.minmarkDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.subjectsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(506, 19);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(367, 243);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // subjectidDataGridViewTextBoxColumn
+            // 
+            this.subjectidDataGridViewTextBoxColumn.DataPropertyName = "subject_id";
+            this.subjectidDataGridViewTextBoxColumn.HeaderText = "subject_id";
+            this.subjectidDataGridViewTextBoxColumn.Name = "subjectidDataGridViewTextBoxColumn";
+            this.subjectidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjetnameDataGridViewTextBoxColumn
+            // 
+            this.subjetnameDataGridViewTextBoxColumn.DataPropertyName = "subjet_name";
+            this.subjetnameDataGridViewTextBoxColumn.HeaderText = "subjet_name";
+            this.subjetnameDataGridViewTextBoxColumn.Name = "subjetnameDataGridViewTextBoxColumn";
+            this.subjetnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // semDataGridViewTextBoxColumn
+            // 
+            this.semDataGridViewTextBoxColumn.DataPropertyName = "sem";
+            this.semDataGridViewTextBoxColumn.HeaderText = "sem";
+            this.semDataGridViewTextBoxColumn.Name = "semDataGridViewTextBoxColumn";
+            this.semDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // twmarkDataGridViewTextBoxColumn
+            // 
+            this.twmarkDataGridViewTextBoxColumn.DataPropertyName = "tw_mark";
+            this.twmarkDataGridViewTextBoxColumn.HeaderText = "tw_mark";
+            this.twmarkDataGridViewTextBoxColumn.Name = "twmarkDataGridViewTextBoxColumn";
+            this.twmarkDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // minmarkDataGridViewTextBoxColumn
+            // 
+            this.minmarkDataGridViewTextBoxColumn.DataPropertyName = "min_mark";
+            this.minmarkDataGridViewTextBoxColumn.HeaderText = "min_mark";
+            this.minmarkDataGridViewTextBoxColumn.Name = "minmarkDataGridViewTextBoxColumn";
+            this.minmarkDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectsBindingSource
+            // 
+            this.subjectsBindingSource.DataMember = "subjects";
+            this.subjectsBindingSource.DataSource = this.studentMgtDataSet3;
+            // 
+            // studentMgtDataSet3
+            // 
+            this.studentMgtDataSet3.DataSetName = "StudentMgtDataSet3";
+            this.studentMgtDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox1
             // 
@@ -162,6 +233,10 @@
             this.comboBox1.Size = new System.Drawing.Size(255, 21);
             this.comboBox1.TabIndex = 12;
             // 
+            // subjectsTableAdapter
+            // 
+            this.subjectsTableAdapter.ClearBeforeFill = true;
+            // 
             // AddSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,16 +247,19 @@
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_failMArk);
+            this.Controls.Add(this.txt_termworkMark);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_subjectName);
             this.Name = "AddSubject";
             this.Text = "AddSubject";
+            this.Load += new System.EventHandler(this.AddSubject_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,17 +267,25 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_subjectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_termworkMark;
+        private System.Windows.Forms.TextBox txt_failMArk;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private StudentMgtDataSet3 studentMgtDataSet3;
+        private System.Windows.Forms.BindingSource subjectsBindingSource;
+        private StudentMgtDataSet3TableAdapters.subjectsTableAdapter subjectsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjetnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn semDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn twmarkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minmarkDataGridViewTextBoxColumn;
     }
 }

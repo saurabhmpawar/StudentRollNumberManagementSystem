@@ -37,6 +37,8 @@
             this.subjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subjectInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subjectReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -61,8 +63,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -76,7 +76,7 @@
             this.usersToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip.Size = new System.Drawing.Size(648, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -115,14 +115,31 @@
             // subjectInfoToolStripMenuItem
             // 
             this.subjectInfoToolStripMenuItem.Name = "subjectInfoToolStripMenuItem";
-            this.subjectInfoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.subjectInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.subjectInfoToolStripMenuItem.Text = "Subject Info";
+            this.subjectInfoToolStripMenuItem.Click += new System.EventHandler(this.subjectInfoToolStripMenuItem_Click);
             // 
             // subjectReportToolStripMenuItem
             // 
             this.subjectReportToolStripMenuItem.Name = "subjectReportToolStripMenuItem";
-            this.subjectReportToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.subjectReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.subjectReportToolStripMenuItem.Text = "Subject Report";
+            this.subjectReportToolStripMenuItem.Click += new System.EventHandler(this.subjectReportToolStripMenuItem_Click);
+            // 
+            // usersToolStripMenuItem
+            // 
+            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userInfoToolStripMenuItem});
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.usersToolStripMenuItem.Text = "Users";
+            // 
+            // userInfoToolStripMenuItem
+            // 
+            this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.userInfoToolStripMenuItem.Text = "User info";
+            this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -221,7 +238,7 @@
             this.helpToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(632, 25);
+            this.toolStrip.Size = new System.Drawing.Size(648, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -292,7 +309,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.Size = new System.Drawing.Size(648, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -302,26 +319,11 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // usersToolStripMenuItem
-            // 
-            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.userInfoToolStripMenuItem});
-            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.usersToolStripMenuItem.Text = "Users";
-            // 
-            // userInfoToolStripMenuItem
-            // 
-            this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.userInfoToolStripMenuItem.Text = "User info";
-            this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(648, 453);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);

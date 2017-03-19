@@ -71,6 +71,7 @@
             this.Controls.Add(this.BtnNext);
             this.Name = "AddMarksInfo";
             this.Text = "AddMarksInfo";
+            this.Load += new System.EventHandler(this.AddMarksInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

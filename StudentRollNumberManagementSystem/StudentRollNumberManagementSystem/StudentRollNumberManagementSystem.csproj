@@ -76,6 +76,12 @@
     <Compile Include="AddMarksInfo.Designer.cs">
       <DependentUpon>AddMarksInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSubject.Designer.cs">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentMgtDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentMgtDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentMgtDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StudentReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +141,20 @@
     <Compile Include="StudInfo.Designer.cs">
       <DependentUpon>StudInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sublistreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sublistreport.Designer.cs">
+      <DependentUpon>Sublistreport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddLoginDetails.resx">
       <DependentUpon>AddLoginDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMarksInfo.resx">
       <DependentUpon>AddMarksInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSubject.resx">
+      <DependentUpon>AddSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -154,6 +174,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="staffDashboard.resx">
       <DependentUpon>staffDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +185,9 @@
       <DependentUpon>StudInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudnetRdlcReport.rdlc" />
+    <EmbeddedResource Include="Sublistreport.resx">
+      <DependentUpon>Sublistreport.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,6 +229,17 @@
     </None>
     <None Include="StudentMgtDataSet2.xss">
       <DependentUpon>StudentMgtDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentMgtDataSet3.xsc">
+      <DependentUpon>StudentMgtDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="StudentMgtDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentMgtDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentMgtDataSet3.xss">
+      <DependentUpon>StudentMgtDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

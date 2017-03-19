@@ -119,5 +119,17 @@ namespace StudentRollNumberManagementSystem
             AddLoginDetails adl = new AddLoginDetails();
             adl.Show();
         }
+
+        private void subjectInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddSubject sub = new AddSubject();
+            sub.Show();
+        }
+
+        private void subjectReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sublistreport subje= new Sublistreport();
+            subje.Show();
+        }
     }
 }

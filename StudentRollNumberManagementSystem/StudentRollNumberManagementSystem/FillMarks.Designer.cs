@@ -45,9 +45,6 @@
             this.btn_next = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentMgtDataSet2 = new StudentRollNumberManagementSystem.StudentMgtDataSet2();
-            this.marksdetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marks_detailsTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSet2TableAdapters.marks_detailsTableAdapter();
             this.rollnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,16 +52,21 @@
             this.updatedOnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marksdetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentMgtDataSet2 = new StudentRollNumberManagementSystem.StudentMgtDataSet2();
+            this.marks_detailsTableAdapter = new StudentRollNumberManagementSystem.StudentMgtDataSet2TableAdapters.marks_detailsTableAdapter();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblSubjectid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marksdetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 23);
+            this.label1.Location = new System.Drawing.Point(42, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 0;
@@ -74,7 +76,7 @@
             // 
             this.label_subject.AutoSize = true;
             this.label_subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_subject.Location = new System.Drawing.Point(165, 23);
+            this.label_subject.Location = new System.Drawing.Point(167, 12);
             this.label_subject.Name = "label_subject";
             this.label_subject.Size = new System.Drawing.Size(0, 20);
             this.label_subject.TabIndex = 1;
@@ -172,6 +174,7 @@
             this.btn_Save.TabIndex = 11;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_pre
             // 
@@ -224,20 +227,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(335, 259);
             this.dataGridView1.TabIndex = 15;
             // 
-            // studentMgtDataSet2
-            // 
-            this.studentMgtDataSet2.DataSetName = "StudentMgtDataSet2";
-            this.studentMgtDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // marksdetailsBindingSource
-            // 
-            this.marksdetailsBindingSource.DataMember = "marks_details";
-            this.marksdetailsBindingSource.DataSource = this.studentMgtDataSet2;
-            // 
-            // marks_detailsTableAdapter
-            // 
-            this.marks_detailsTableAdapter.ClearBeforeFill = true;
-            // 
             // rollnumberDataGridViewTextBoxColumn
             // 
             this.rollnumberDataGridViewTextBoxColumn.DataPropertyName = "roll_number";
@@ -287,11 +276,46 @@
             this.updatedByDataGridViewTextBoxColumn.Name = "updatedByDataGridViewTextBoxColumn";
             this.updatedByDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // marksdetailsBindingSource
+            // 
+            this.marksdetailsBindingSource.DataMember = "marks_details";
+            this.marksdetailsBindingSource.DataSource = this.studentMgtDataSet2;
+            // 
+            // studentMgtDataSet2
+            // 
+            this.studentMgtDataSet2.DataSetName = "StudentMgtDataSet2";
+            this.studentMgtDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // marks_detailsTableAdapter
+            // 
+            this.marks_detailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(42, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Subject Id :";
+            // 
+            // lblSubjectid
+            // 
+            this.lblSubjectid.AutoSize = true;
+            this.lblSubjectid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubjectid.Location = new System.Drawing.Point(182, 48);
+            this.lblSubjectid.Name = "lblSubjectid";
+            this.lblSubjectid.Size = new System.Drawing.Size(0, 20);
+            this.lblSubjectid.TabIndex = 17;
+            // 
             // FillMarks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 296);
+            this.Controls.Add(this.lblSubjectid);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.btn_next);
@@ -312,8 +336,8 @@
             this.Text = "FillMarks";
             this.Load += new System.EventHandler(this.FillMarks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marksdetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMgtDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +371,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedOnDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedByDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblSubjectid;
     }
 }
